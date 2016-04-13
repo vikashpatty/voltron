@@ -28,11 +28,11 @@ addons:
 #   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; brew install python gdb ; fi
 #   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get update -qq ; apt-get install lldb-3.4 ; fi
 
-install:
-  - pip install mock pexpect
-  - pip install .
+# install:
+#   - pip install mock pexpect
+#   - pip install .
 
 script:
   - mkdir ~/.voltron
-  - echo '{"general":{"debug_logging":true}}' >~/.voltron/config
-  - nosetests -sv tests/gdb_cli_tests.py
+  # - echo '{"general":{"debug_logging":true}}' >~/.voltron/config
+  # - nosetests -sv tests/gdb_cli_tests.py
