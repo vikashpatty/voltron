@@ -24,8 +24,7 @@ addons:
       - build-essential
       - gdb
 
-before install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update  ; fi
+# before install:
 #   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get update -qq ; apt-get install lldb-3.4 ; fi
 
 # install:
@@ -33,7 +32,8 @@ before install:
 #   - pip install .
 
 script:
-  - echo name $TRAVIS_OS_NAME
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update  ; fi
+  - brew install gdb
   - uname -a
   - mkdir ~/.voltron
   - echo '{"general":{"debug_logging":true}}' >~/.voltron/config
