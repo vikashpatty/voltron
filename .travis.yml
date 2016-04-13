@@ -29,7 +29,7 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get update -qq ; apt-get install lldb-3.4 ; fi
 
 install:
-  - pip install mock pexpect --user
+  - pip install mock pexpect nose --user
   - pip install . --user
 
 script:
