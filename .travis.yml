@@ -28,9 +28,9 @@ addons:
 #   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update ; brew install python gdb ; fi
 #   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get update -qq ; apt-get install lldb-3.4 ; fi
 
-# install:
-#   - pip install mock pexpect
-#   - pip install .
+install:
+  - pip install mock pexpect
+  - pip install .
 
 script:
   - uname -a
