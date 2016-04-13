@@ -34,5 +34,6 @@ addons:
 
 script:
   - mkdir ~/.voltron
+  - sleep 20
   # - echo '{"general":{"debug_logging":true}}' >~/.voltron/config
   # - nosetests -sv tests/gdb_cli_tests.py
