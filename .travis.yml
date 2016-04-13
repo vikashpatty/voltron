@@ -24,15 +24,14 @@ addons:
       - build-essential
       - gdb
 
-# before install:
-#   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get update -qq ; apt-get install lldb-3.4 ; fi
-
 # install:
 #   - pip install mock pexpect
 #   - pip install .
 
 script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update  ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get update -qq ; apt-get install lldb-3.4 ; fi
+  - pip install mock pexpect
   - brew install gdb
   - uname -a
   - mkdir ~/.voltron
